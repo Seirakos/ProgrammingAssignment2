@@ -27,8 +27,8 @@ cacheSolve <- function(x, ...){
               message("receiving cached data")
               return(inv)
             }
-            data <- x$get()
-            inv <- solve(data, ...)
+            mat <- x$get()
+            inv <- mat(data, ...)
             x$SetInverse(inv)
             inv
 }
